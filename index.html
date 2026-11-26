@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sate Kajang Hj. Samuri — Pesan Dalam Talian</title>
+<meta name="description" content="Pesan sate, set sate, nasi dan minuman daripada Sate Kajang Hj. Samuri untuk penghantaran atau ambil sendiri.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <span>Harga termasuk 6% SST</span>
+    <span class="topbar-mid">16 cawangan di Lembah Klang, Putrajaya &amp; Negeri Sembilan</span>
+    <a href="tel:0389221093">Pejabat: 03-8922 1093</a>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="wrap header-in">
+    <a href="#" class="logo" aria-label="Sate Kajang Hj. Samuri — laman utama"><img id="logoImg" alt="Sate Kajang Hj. Samuri" width="146" height="70"></a>
+    <nav class="nav" aria-label="Utama">
+      <a href="#menu">Menu</a>
+      <a class="nav-cta" href="#pesan">Pesan Sekarang</a>
+      <a href="#cawangan">Cawangan</a>
+      <a href="#tentang">Tentang Kami</a>
+    </nav>
+    <div class="header-actions">
+      <div class="mode" role="radiogroup" aria-label="Cara pesanan">
+        <button role="radio" aria-checked="true" data-mode="delivery">Penghantaran</button>
+        <button role="radio" aria-checked="false" data-mode="pickup">Ambil Sendiri</button>
+      </div>
+      <button class="cart-btn" id="cartBtn" aria-label="Buka troli">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.4" fill="currentColor"/><circle cx="17" cy="20" r="1.4" fill="currentColor"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+        <span class="cart-total" id="cartTotalBtn">RM 0.00</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <img class="hero-img" id="heroImg" alt="">
+    <div class="wrap hero-in">
+      <h1>Sate Kajang<br>Hj. Samuri</h1>
+      <p class="hero-sub">Untuk rasa sate Kajang yang sebenar. Dibakar atas arang, dihantar terus dari cawangan terdekat.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#pesan">Pesan sekarang</a>
+        <a class="btn btn-onimg" href="#menu">Lihat menu penuh</a>
+      </div>
+    </div>
+    <div class="wrap hero-facts">
+      <div><b>1992</b><span>Bermula di Kajang</span></div>
+      <div><b>16</b><span>Cawangan</span></div>
+      <div><b>8</b><span>Jenis sate</span></div>
+    </div>
+  </section>
+
+  <section class="section builder" id="pesan">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>Pesan sate mengikut cucuk</h2>
+          <p>Campur ikut selera. Pilih jenis, tetapkan bilangan cucuk, tambah sampingan — harga dikira serta-merta.</p>
+        </div>
+        <button class="link" id="bldReset">Kosongkan pesanan</button>
+      </div>
+
+      <div class="bld">
+        <div class="bld-main">
+          <div class="grill" id="grill">
+            <img class="grill-bg" src="assets/grill.jpg" alt="">
+            <div class="grill-glow" aria-hidden="true"></div>
+            <div class="grill-sticks" id="grillSticks" aria-hidden="true"></div>
+            <span class="grill-count" id="grillCount" aria-live="polite"></span>
+            <p class="grill-empty" id="grillEmpty">Pilih jenis sate di bawah, kemudian tambah cucuk.</p>
+          </div>
+          <div class="picker" id="picker" role="tablist" aria-label="Jenis sate"></div>
+          <div class="stage">
+            <div class="stage-info">
+              <div class="stage-title">
+                <h3 id="stageName">Sate Ayam</h3>
+                <span class="stage-price" id="stagePrice">RM 1.70 / cucuk</span>
+              </div>
+              <p class="stage-desc" id="stageDesc"></p>
+              <div class="stage-controls">
+                <div class="stepper lg" id="stageStepper">
+                  <button data-d="-1" aria-label="Kurang satu cucuk">−</button>
+                  <input id="stageQty" type="number" inputmode="numeric" min="0" max="500" value="0" aria-label="Bilangan cucuk">
+                  <button data-d="1" aria-label="Tambah satu cucuk">+</button>
+                </div>
+                <div class="quick">
+                  <button data-d="5">+5</button>
+                  <button data-d="10">+10</button>
+                  <button data-d="20">+20</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="tray" aria-label="Pesanan anda">
+          <div class="tray-head">
+            <h3>Pesanan anda</h3>
+            <span id="trayCount" class="muted">0 cucuk</span>
+          </div>
+          <ul class="tray-lines" id="trayLines"></ul>
+          <div class="tray-sides">
+            <h4>Sampingan</h4>
+            <div id="traySides"></div>
+          </div>
+          <div class="tray-foot">
+            <div class="tray-total"><span>Jumlah</span><b id="trayTotal">RM 0.00</b></div>
+            <button class="btn btn-primary block" id="trayAdd" disabled>Tambah ke troli</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section menu" id="menu">
+    <div class="wrap">
+      <div class="sec-head"><div><h2>Menu</h2><p>Semua harga termasuk 6% SST.</p></div></div>
+    </div>
+    <div class="cats" id="cats">
+      <div class="wrap cats-in" id="catsIn" role="tablist" aria-label="Kategori menu"></div>
+    </div>
+    <div class="wrap" id="menuBody"></div>
+  </section>
+
+  <section class="section about" id="tentang">
+    <div class="wrap about-in">
+      <div class="about-media"><img id="factoryImg" alt="Penyediaan sate di kilang Sate Kajang Hj. Samuri" loading="lazy"></div>
+      <div class="about-copy">
+        <h2>Dari gerai kecil di Kajang</h2>
+        <p>Hj. Samuri mula menjual sate secara kecil-kecilan pada tahun 1992. Perniagaan keluarga itu didaftarkan sebagai Hj. Samuri &amp; Anak-Anak Enterprise Sdn. Bhd. pada tahun 2000, dan kini mengendalikan 16 cawangan di sekitar Lembah Klang, Putrajaya dan Negeri Sembilan.</p>
+        <p>Selain cawangan sendiri, kami membekalkan sate kepada hotel, resort dan kafe di seluruh Lembah Klang, Putrajaya dan Negeri Sembilan.</p>
+        <dl class="about-facts">
+          <div><dt>Pejabat urusan</dt><dd>Lot 3764, Jalan Saujana, Sungai Ramal Dalam, 43000 Kajang, Selangor</dd></div>
+          <div><dt>Tempahan katering &amp; korporat</dt><dd><a href="tel:0389221093">03-8922 1093</a> · <a href="tel:0389221094">03-8922 1094</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section branches" id="cawangan">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><h2>Cawangan</h2><p>Waktu operasi dan status semasa dikemas kini mengikut masa tempatan.</p></div>
+        <div class="filter" id="branchFilter" role="radiogroup" aria-label="Tapis cawangan">
+          <button role="radio" aria-checked="true" data-f="all">Semua</button>
+          <button role="radio" aria-checked="false" data-f="bandar">Bandar</button>
+          <button role="radio" aria-checked="false" data-f="lebuhraya">Lebuhraya</button>
+        </div>
+      </div>
+      <div class="branch-grid" id="branchGrid"></div>
+      <p class="muted small more-branches">Senarai lengkap 16 cawangan termasuk Negeri Sembilan akan dipaparkan di sini.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div class="f-brand">
+      <img id="footLogo" alt="Sate Kajang Hj. Samuri" width="130" height="62">
+      <p>Hj. Samuri &amp; Anak-Anak Enterprise Sdn. Bhd.<br>200001000288 (502893-P)</p>
+    </div>
+    <div>
+      <h4>Pesanan</h4>
+      <a href="#menu">Menu</a><a href="#pesan">Pesan Sekarang</a><a href="#cawangan">Cawangan</a>
+    </div>
+    <div>
+      <h4>Syarikat</h4>
+      <a href="#tentang">Tentang kami</a><a href="https://satekajang.com.my/kerjaya/">Kerjaya</a><a href="https://satekajang.com.my/ejen-kami/">Ejen kami</a><a href="https://satekajang.com.my/polisi-privasi/">Polisi privasi</a>
+    </div>
+    <div>
+      <h4>Ikuti kami</h4>
+      <a href="https://www.facebook.com/hjsamuri2021">Facebook</a><a href="https://www.instagram.com/satekajanghjsamuri_">Instagram</a><a href="http://tiktok.com/@satekajanghj.samuri">TikTok</a>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© <span id="yr"></span> Hj. Samuri &amp; Anak-Anak Enterprise Sdn. Bhd.</span>
+    <span>Semua harga termasuk 6% SST</span>
+  </div>
+</footer>
+
+<button class="mbar" id="mbar" hidden>
+  <span><b id="mbarCount">0</b> item</span>
+  <span>Lihat troli</span>
+  <b id="mbarTotal">RM 0.00</b>
+</button>
+
+<div class="scrim" id="productScrim" hidden>
+  <div class="sheet product" role="dialog" aria-modal="true" aria-labelledby="pName">
+    <button class="x" data-close aria-label="Tutup">×</button>
+    <div class="p-media" id="pMedia"></div>
+    <div class="p-body">
+      <h3 id="pName"></h3>
+      <p class="p-desc" id="pDesc"></p>
+      <div id="pGroups"></div>
+      <label class="p-note">Nota untuk dapur <span class="muted">(pilihan)</span>
+        <input id="pNote" maxlength="80" placeholder="Contoh: kuah asing, kurang pedas">
+      </label>
+    </div>
+    <div class="p-foot">
+      <div class="stepper" id="pStepper">
+        <button data-d="-1" aria-label="Kurang">−</button>
+        <input id="pQty" type="number" inputmode="numeric" min="1" max="500" value="1" aria-label="Kuantiti">
+        <button data-d="1" aria-label="Tambah">+</button>
+      </div>
+      <button class="btn btn-primary grow" id="pAdd">Tambah · RM 0.00</button>
+    </div>
+  </div>
+</div>
+
+<div class="scrim right" id="cartScrim" hidden>
+  <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="drawer-head">
+      <h3 id="cartTitle">Troli</h3>
+      <button class="x" data-close aria-label="Tutup">×</button>
+    </div>
+    <div class="drawer-mode" id="drawerMode"></div>
+    <div class="drawer-body" id="cartBody"></div>
+    <div class="drawer-foot" id="cartFoot">
+      <div class="row"><span>Jumlah kecil</span><span id="cSub">RM 0.00</span></div>
+      <div class="row muted small"><span id="cFeeLabel">Caj penghantaran</span><span id="cFee">Dikira semasa pembayaran</span></div>
+      <button class="btn btn-primary block" id="checkoutBtn">Teruskan ke pembayaran</button>
+    </div>
+  </aside>
+</div>
+
+<div class="scrim" id="coScrim" hidden>
+  <div class="sheet checkout" role="dialog" aria-modal="true" aria-labelledby="coTitle">
+    <button class="x" data-close aria-label="Tutup">×</button>
+    <div class="co-main" id="coMain">
+      <h3 id="coTitle">Pembayaran</h3>
+      <ol class="co-steps"><li class="on">Butiran</li><li>Bayaran</li></ol>
+      <form id="coForm" novalidate>
+        <div class="co-pane" data-pane="0">
+          <fieldset class="field">
+            <legend>Cara pesanan</legend>
+            <div class="seg" id="coMode">
+              <label><input type="radio" name="mode" value="delivery"><span>Penghantaran</span></label>
+              <label><input type="radio" name="mode" value="pickup"><span>Ambil sendiri</span></label>
+            </div>
+          </fieldset>
+          <label class="field">Cawangan
+            <select id="coBranch" required></select>
+          </label>
+          <label class="field delivery-only">Alamat penghantaran
+            <textarea id="coAddr" rows="2" placeholder="No. rumah, jalan, taman, poskod"></textarea>
+          </label>
+          <label class="field">Masa
+            <select id="coTime"></select>
+          </label>
+          <div class="two">
+            <label class="field">Nama<input id="coName" autocomplete="name" required></label>
+            <label class="field">No. telefon<input id="coPhone" type="tel" autocomplete="tel" placeholder="01X-XXX XXXX" required></label>
+          </div>
+          <p class="co-err" id="coErr0" role="alert"></p>
+        </div>
+        <div class="co-pane" data-pane="1" hidden>
+          <fieldset class="field">
+            <legend>Kaedah bayaran</legend>
+            <div class="pay" id="coPay">
+              <label><input type="radio" name="pay" value="FPX" checked><span><b>FPX</b><small>Perbankan dalam talian</small></span></label>
+              <label><input type="radio" name="pay" value="Kad"><span><b>Kad debit / kredit</b><small>Visa, Mastercard</small></span></label>
+              <label><input type="radio" name="pay" value="e-Wallet"><span><b>e-Wallet</b><small>Touch 'n Go, GrabPay, Boost</small></span></label>
+              <label class="pickup-only"><input type="radio" name="pay" value="Kaunter"><span><b>Bayar di kaunter</b><small>Semasa ambil pesanan</small></span></label>
+            </div>
+          </fieldset>
+          <p class="muted small">Anda akan dibawa ke halaman pembayaran yang selamat untuk melengkapkan transaksi.</p>
+        </div>
+        <div class="co-actions">
+          <button type="button" class="btn btn-ghost" id="coBack" hidden>Kembali</button>
+          <button type="submit" class="btn btn-primary grow" id="coNext">Teruskan</button>
+        </div>
+      </form>
+    </div>
+    <aside class="co-sum">
+      <h4>Ringkasan pesanan</h4>
+      <ul id="coLines"></ul>
+      <div class="row"><span>Jumlah kecil</span><span id="coSub"></span></div>
+      <div class="row"><span id="coFeeLabel">Caj penghantaran</span><span id="coFee"></span></div>
+      <div class="row total"><span>Jumlah</span><b id="coTotal"></b></div>
+      <p class="muted tiny">Termasuk 6% SST</p>
+    </aside>
+  </div>
+</div>
+
+<div class="scrim" id="okScrim" hidden>
+  <div class="sheet ok" role="dialog" aria-modal="true" aria-labelledby="okTitle">
+    <div class="ok-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <h3 id="okTitle">Pesanan diterima</h3>
+    <p class="ok-no">No. pesanan <b id="okNo"></b></p>
+    <div class="ok-meta" id="okMeta"></div>
+    <p class="muted tiny">Prototaip reka bentuk — tiada pesanan atau bayaran sebenar diproses.</p>
+    <button class="btn btn-primary block" id="okDone">Selesai</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
